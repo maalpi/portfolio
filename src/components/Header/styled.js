@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Nav = styled.div`
-  background-color: ${(props) => (props.hovered ? 'black' : 'transparent')};
+  background-color: ${(props) => (props.hovered ? 'white' : 'transparent')};
   padding: 2.3rem;
   display: flex;
   align-items: center;
@@ -12,28 +13,55 @@ export const Nav = styled.div`
   top: 0;
   left: 0;
   width: 100%;
+  border: 1rem;
+  z-index: 1000;
+  border-bottom: ${(props) =>
+    props.hovered ? '1px solid #b7b8c0' : '1px solid transparent'};
 
-  a {
-    color: ${(props) => (props.hovered ? 'white' : 'black')};
-    transition: background-color 0.4s ease;
-    margin: 0 10px 0;
-    font-weight: bold;
-    font-size: 0.9rem;
+  .link {
+    color: ${(props) => (props.hovered ? 'black' : 'black')};
+  }
+  .contato {
+    color: ${(props) => (props.hovered ? 'black' : 'white')};
   }
 
-  h1 {
-    color: ${(props) => (props.hovered ? 'white' : 'black')};
-    font-size: 2.3rem;
+  .sobrenome {
+    filter: ${(props) => (props.hovered ? 'invert(1)' : 'invert(0)')};
+  }
+
+  @media (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+
+    .sobrenome {
+      filter: invert(1);
+    }
+  }
+`;
+export const ContainerDiv = styled.div`
+  margin-left: 5.2%;
+
+  @media (max-width: 768px) {
+    margin-left: 34.2%;
   }
 `;
 
-export const MenuLink = styled.a`
+export const StyledSVG = styled.img`
+  /* filter: ${(props) => (props.hovered ? 'invert(0)' : 'invert(1)')}; */
+  filter: invert(1);
+  width: 31%; /* Defina o tamanho desejado */
+  height: auto; /* Mantenha a proporção de aspecto */
+  margin-right: 2%;
+`;
+
+export const MenuLink = styled(Link)`
   padding: 0;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   transition: all 0.3s ease-in;
   font-size: 0.9rem;
+  margin: 0 10px 0;
 
   &:hover {
     color: #7b7fda;

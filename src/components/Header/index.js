@@ -1,5 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Nav, Menu, MenuLink, Hamburger } from './styled';
+import {
+  Nav,
+  Menu,
+  MenuLink,
+  Hamburger,
+  StyledSVG,
+  ContainerDiv,
+} from './styled';
+
+import svg from '../../images/MATEUS.svg';
+import svg1 from '../../images/PIERRE.svg';
 
 export default function Header() {
   const [isHovered, setIsHovered] = useState(false);
@@ -26,17 +36,34 @@ export default function Header() {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      <Menu isOpen={isOpen}>
+        <MenuLink className="link" to="/">
+          Sobre Mim
+        </MenuLink>
+        <MenuLink className="link" to="/projetos">
+          {' '}
+          Projetos
+        </MenuLink>
+      </Menu>
+
+      <ContainerDiv>
+        <StyledSVG src={svg} hovered={isHovered || isScrolled} />
+        <StyledSVG
+          src={svg1}
+          className="sobrenome"
+          hovered={isHovered || isScrolled}
+        />
+      </ContainerDiv>
+      <Menu isOpen={isOpen}>
+        <MenuLink className="contato" to="/contato">
+          Fale comigo
+        </MenuLink>
+      </Menu>
       <Hamburger onClick={() => setIsOpen(!isOpen)}>
         <span />
         <span />
         <span />
       </Hamburger>
-      <Menu isOpen={isOpen}>
-        <MenuLink href="/">Sobre Mim</MenuLink>
-        <MenuLink href="/">Projetos</MenuLink>
-      </Menu>
-      <h1>MATEUS PIERRE</h1>
-      <MenuLink href="/">Fale comigo</MenuLink>
     </Nav>
   );
 }
