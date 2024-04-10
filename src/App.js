@@ -8,6 +8,7 @@ import Contato from './pages/Contato';
 
 import GlobalStyles from './styles/GlobalStyle';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/projetos" element={<Projetos />} />
         <Route path="/contato" element={<Contato />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

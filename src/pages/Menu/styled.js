@@ -5,7 +5,7 @@ export const Container = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, white 50%, #121b7d 50%);
+  background: linear-gradient(to right, white 50%, black 50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,5 +68,40 @@ export const MenuLink = styled(Link)`
 
   &:hover {
     color: #7b7fda;
+  }
+`;
+
+export const ContainerInfo = styled.div`
+  @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+
+  .slide-item {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+  }
+  .carrossel {
+    margin-top: 5%;
+    width: 55%;
+    height: auto;
+    background: transparent;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .itens {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .itens text {
+    font-size: 200%;
+    color: white;
   }
 `;

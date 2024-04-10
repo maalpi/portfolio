@@ -39,7 +39,7 @@ export const Nav = styled.div`
   }
 `;
 export const ContainerDiv = styled.div`
-  margin-left: 5.2%;
+  margin-left: 5.5%;
 
   @media (max-width: 768px) {
     margin-left: 34.2%;
