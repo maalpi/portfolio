@@ -85,6 +85,7 @@ export const ContainerInfo = styled.div`
     object-fit: cover;
   }
   .carrossel {
+    position: absolute;
     margin-top: 5%;
     width: 55%;
     height: auto;
@@ -103,5 +104,32 @@ export const ContainerInfo = styled.div`
   .itens text {
     font-size: 200%;
     color: white;
+  }
+
+  .texto {
+    max-width: 500px; /* Largura máxima */
+    margin: 20px auto; /* Margem para centralizar o parágrafo */
+    margin-top: 12%;
+    color: white;
+
+    p {
+      text-align: justify;
+      font-size: 130%;
+      font-weight: 500;
+      line-height: 1.4;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 300px;
+      margin-top: 30%;
+      .texto {
+        font-size: 100%;
+        display: 'inline-block';
+        position: absolute;
+        padding: 0 30px;
+        text-align: center;
+      }
+    }
   }
 `;
