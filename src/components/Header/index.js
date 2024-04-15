@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom'; // Importando o hook useLocation
+
 import {
   Nav,
   Menu,
@@ -12,6 +14,8 @@ import svg from '../../images/MATEUS.svg';
 import svg1 from '../../images/PIERRE.svg';
 
 export default function Header() {
+  const location = useLocation();
+  console.log(location.pathname);
   const [isHovered, setIsHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);

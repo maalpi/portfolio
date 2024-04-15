@@ -5,7 +5,7 @@ export const Container = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, white 50%, black 50%);
+  background: linear-gradient(to right, white 50%, #121212 50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,11 +75,12 @@ export const ContainerInfo = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
   width: 100%;
   height: 100%;
-  background: black;
+  background: #121212;
   display: flex;
   justify-content: center;
 
   .slide-item {
+    margin-right: 1%;
     width: 30%;
     height: auto;
     object-fit: cover;
@@ -107,28 +108,77 @@ export const ContainerInfo = styled.div`
   }
 
   .texto {
-    max-width: 500px; /* Largura máxima */
-    margin: 20px auto; /* Margem para centralizar o parágrafo */
+    background: transparent;
+    display: flex;
+    align-items: center;
     margin-top: 12%;
     color: white;
+    border-radius: 2%;
+    flex-direction: row;
+
+    .direita {
+      position: absolute;
+      margin-left: 50%;
+      max-width: 450px;
+      height: 450px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #888 transparent;
+
+      .texto::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      .texto::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 10px;
+      }
+    }
 
     p {
       text-align: justify;
-      font-size: 130%;
+      font-size: 140%;
       font-weight: 500;
-      line-height: 1.4;
+      line-height: 1.6;
       font-family: 'Times New Roman', Times, serif;
     }
 
-    @media (max-width: 768px) {
-      max-width: 300px;
+    img {
+      width: auto; /* Definir a largura da imagem como automática */
+      height: auto;
+      max-height: 35%; /* Definir a altura máxima da imagem */
+      max-width: 35%;
+      height: auto;
+      border-radius: 20%;
+      z-index: 0;
+    }
+
+    @media (max-width: 978px) {
+      flex-direction: column;
       margin-top: 30%;
       .texto {
-        font-size: 100%;
-        display: 'inline-block';
-        position: absolute;
-        padding: 0 30px;
-        text-align: center;
+        width: 400px;
+        display: flex;
+        flex-direction: column; /* Alterar para coluna para posicionar a imagem acima e o texto abaixo */
+        align-items: center; /* Alinhar itens no centro */
+        margin-top: 30%;
+        font-size: 100%; /* Redefinir o tamanho da fonte se necessário */
+        text-align: center; /* Centralizar o texto */
+      }
+      .esquerda {
+        width: 100%; /* Garantir que a imagem ocupe toda a largura */
+        text-align: center; /* Centralizar a imagem */
+      }
+      img {
+        max-width: 100%; /* Definir a largura máxima da imagem */
+        height: auto; /* Permitir que a altura seja ajustada automaticamente */
+        border-radius: 20%;
+        z-index: 0;
+      }
+
+      .direita {
+        position: relative;
+        margin-left: 0;
       }
     }
   }
