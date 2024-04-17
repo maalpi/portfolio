@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { FaSquareGithub } from 'react-icons/fa6';
 
 import projAmbiental from '../../images/logooReserva.svg';
 import bleConect from '../../images/Ble.svg';
@@ -9,6 +10,9 @@ import escola from '../../images/escola.png';
 import landingPage from '../../images/landingPag.png';
 import imc from '../../images/imc.png';
 import darkwhite from '../../images/darkwhite.png';
+import bancoProjeto from '../../images/bancoProj.png';
+import campoMinado from '../../images/campoMinado.png';
+import proj from '../../images/proj.svg';
 
 import { Container } from './styled';
 import 'swiper/css/autoplay';
@@ -22,8 +26,7 @@ export default function Projetos() {
     {
       id: 'Reserva Ambiental',
       image: projAmbiental,
-      video:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+      video: 'https://www.youtube.com/watch?v=WRFsCqOO2Zs',
       texto:
         'Projeto sobre a reserva ecologica Olho Dágua das Onças em parceria com a UEPB.',
       download:
@@ -41,8 +44,7 @@ export default function Projetos() {
       id: 'Receitas GPT',
       image:
         'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
-      video:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+      video: 'https://www.youtube.com/watch?v=_thNb8ocdCU',
       texto:
         'Aplicativo que gera receitas de acordo com os ingredientes adicionados usando a OpenAI.',
       projeto:
@@ -63,12 +65,10 @@ export default function Projetos() {
     {
       id: 'Gerenciamento Escolar',
       image: escola,
-      video:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+      video: 'https://youtu.be/KJLpwTA741c',
       texto:
         'Site para o gerenciamento de alunos e administradores de uma escola.',
-      projeto:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+      projeto: 'https://github.com/maalpi/Projeto-Escola',
     },
     {
       id: 'Website Reserva',
@@ -109,18 +109,15 @@ export default function Projetos() {
         'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
       texto:
         'Projeto utilizando padrões de projetos na linguagem Python para o gerenciamento de uma loja.',
-      download:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+      projeto: 'https://github.com/maalpi/Store-Management-System/tree/main',
     },
     {
       id: 'Banco',
-      image: bleConect,
-      video:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+      image: bancoProjeto,
+      acesso: 'https://replit.com/@maalpi/ProjetoPOO#Contas/ContaComum.cpp',
       texto:
         'Projeto em C++ que simula o sistema de um banco, desenvolvido com a missão de aprender POO',
-      projeto:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+      projeto: 'https://github.com/maalpi/Projeto_Banco',
     },
     {
       id: 'Bot Discord',
@@ -130,19 +127,15 @@ export default function Projetos() {
         'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
       texto:
         'Projeto em JS de um Bot no discord que pega dados de um determinado jogador a partir do nick ',
-      projeto:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+      projeto: 'https://github.com/maalpi/Bot_Discord_LoL',
     },
     {
       id: 'Campo Minado',
-      image:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
-      video:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+      image: campoMinado,
+      acesso: 'https://replit.com/@maalpi/Campo-MinadoMinesweeper',
       texto:
         'Meu primeiro projetinho, um jogo campo minado desenvolvido utilizando apenas Python e mais nada',
-      projeto:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+      projeto: 'https://github.com/maalpi/Project-Algoritms-Minesweeper',
     },
   ];
 
@@ -151,7 +144,7 @@ export default function Projetos() {
       if (window.innerWidth < 916) {
         setSlidesPerView(1);
         setSpacePerView(50);
-      } else if (window.innerWidth < 1400) {
+      } else if (window.innerWidth < 1645) {
         setSlidesPerView(2);
         setSpacePerView(0);
       } else {
@@ -170,6 +163,25 @@ export default function Projetos() {
 
   return (
     <Container>
+      <div className="textInicial">
+        <img src={proj} alt="slide" className="svg" />
+        <div className="texto">
+          <h1 className="titulo">Conheça alguns dos meus projetos</h1>
+          <p>
+            Abaixo você encontrará os links e videos de alguns dos meus
+            projetos. Mas você tambem pode me seguir no github pra ficar por
+            dentro de novos projetos.
+          </p>
+          <a
+            href="https://github.com/maalpi"
+            alt="link do Github"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaSquareGithub size={54} />
+          </a>
+        </div>
+      </div>
       <div className="carrossel">
         <h1>Projetos Android</h1>
         <Swiper
@@ -287,7 +299,17 @@ export default function Projetos() {
                   <text>{item.id}</text>
                   <p>{item.texto}</p>
                   <div className="botoes">
-                    <button type="submit">Video</button>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        window.open(
+                          item.video ? item.video : item.acesso,
+                          '_blank'
+                        )
+                      }
+                    >
+                      {item.video ? 'Video' : 'Acessar'}
+                    </button>
                     <button
                       type="button"
                       onClick={() =>
