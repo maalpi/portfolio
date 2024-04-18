@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const Container = styled.div`
+export const ContainerStyled = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
   width: 100%;
   height: 100%;
@@ -49,11 +49,50 @@ export const Container = styled.div`
 
   @media (max-width: 768px) {
     background: white;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10%;
+
+    img {
+      max-width: 300px;
+      width: 100%;
+      transform: rotate(0deg);
+      float: top;
+      position: static; /* Removido posicionamento absoluto */
+      margin: 0; /* Removida margem */
+      box-shadow:
+        0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
     .anima {
-      font-size: 150%;
+      max-width: 300px;
+      font-weight: 500;
+      font-size: 300%;
       display: 'inline-block';
-      position: absolute;
       margin-right: 0%;
+      position: relative;
+      text-align: center;
+    }
+
+    .textoInicial {
+      margin-bottom: 0%;
+      margin-left: 3%;
+      padding-top: 12%;
+    }
+    h2,
+    h1 {
+      color: black;
+      text-align: left;
+    }
+
+    h2 {
+      font-weight: 800;
+    }
+
+    .proximaPage {
+      float: right;
+      margin-right: 10%;
     }
   }
 `;
@@ -68,6 +107,10 @@ export const MenuLink = styled(Link)`
 
   &:hover {
     color: #7b7fda;
+  }
+
+  @media (max-height: 768px) {
+    color: black;
   }
 `;
 
@@ -182,4 +225,10 @@ export const ContainerInfo = styled.div`
       }
     }
   }
+`;
+
+export const ContainerContato = styled.div`
+  margin-top: -1%;
+  background: #121212;
+  color: #fff;
 `;

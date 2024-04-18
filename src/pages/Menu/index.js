@@ -4,7 +4,7 @@ import { BsArrowRightSquareFill } from 'react-icons/bs';
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Container, ContainerInfo, MenuLink } from './styled';
+import { ContainerStyled, ContainerInfo, MenuLink } from './styled';
 import 'swiper/css/autoplay';
 // Import Swiper styles
 import 'swiper/css';
@@ -13,6 +13,7 @@ import img from '../../images/img1.jpg';
 
 export default function Menu() {
   const [slidesPerView, setSlidesPerView] = useState(4);
+
   const data = [
     {
       id: 'React',
@@ -94,37 +95,75 @@ export default function Menu() {
 
   return (
     <>
-      <Container>
-        <div className="textoInicial">
-          <h2>Breve descrição</h2>
-          <h1>Proeficiência em React.js, React Native, JavaScript e Python.</h1>
-          <MenuLink to="/projetos">
-            <BsArrowRightSquareFill
-              className="proximaPage"
-              color="#fff"
-              size={50}
-            />
-          </MenuLink>
-        </div>
-        <img src={img} alt="fotoMinhaCriança" />
-        <TypeAnimation
-          className="anima"
-          sequence={[
-            // Same substring at the start will only be typed out once, initially
-            'Desenvolvedor Front-End',
-            2500,
-            'Desenvolvedor Back-End',
-            2500,
-            'Desenvolvedor Full-Stack',
-            2500,
-            'Desenvolvedor Mobile',
-            2500,
-          ]}
-          wrapper="span"
-          speed={20}
-          repeat={Infinity}
-        />
-      </Container>
+      {window.innerWidth < 916 ? (
+        <ContainerStyled>
+          <img src={img} alt="fotoMinhaCriança" />
+          <TypeAnimation
+            className="anima"
+            sequence={[
+              // Same substring at the start will only be typed out once, initially
+              'Desenvolvedor Front-End',
+              2500,
+              'Desenvolvedor Back-End',
+              2500,
+              'Desenvolvedor Full-Stack',
+              2500,
+              'Desenvolvedor Mobile',
+              2500,
+            ]}
+            wrapper="span"
+            speed={20}
+            repeat={Infinity}
+          />
+          <div className="textoInicial">
+            <h2>Breve descrição</h2>
+            <h1>
+              Proeficiência em React.js, React Native, JavaScript e Python.
+            </h1>
+            <MenuLink to="/projetos">
+              <BsArrowRightSquareFill
+                className="proximaPage"
+                color="#000"
+                size={50}
+              />
+            </MenuLink>
+          </div>
+        </ContainerStyled>
+      ) : (
+        <ContainerStyled>
+          <div className="textoInicial">
+            <h2>Breve descrição</h2>
+            <h1>
+              Proeficiência em React.js, React Native, JavaScript e Python.
+            </h1>
+            <MenuLink to="/projetos">
+              <BsArrowRightSquareFill
+                className="proximaPage"
+                color="#fff"
+                size={50}
+              />
+            </MenuLink>
+          </div>
+          <img src={img} alt="fotoMinhaCriança" />
+          <TypeAnimation
+            className="anima"
+            sequence={[
+              // Same substring at the start will only be typed out once, initially
+              'Desenvolvedor Front-End',
+              2500,
+              'Desenvolvedor Back-End',
+              2500,
+              'Desenvolvedor Full-Stack',
+              2500,
+              'Desenvolvedor Mobile',
+              2500,
+            ]}
+            wrapper="span"
+            speed={20}
+            repeat={Infinity}
+          />
+        </ContainerStyled>
+      )}
       <ContainerInfo>
         <div className="carrossel">
           <Swiper
