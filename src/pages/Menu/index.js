@@ -55,7 +55,7 @@ export default function Menu() {
         'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg',
     },
     {
-      id: 'HTML 5',
+      id: 'HTML',
       image:
         'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg',
     },
@@ -121,11 +121,9 @@ export default function Menu() {
               Proeficiência em React.js, React Native, JavaScript e Python.
             </h1>
             <MenuLink to="/projetos">
-              <BsArrowRightSquareFill
-                className="proximaPage"
-                color="#000"
-                size={50}
-              />
+              <button type="submit" className="button-12">
+                Meus Projetos
+              </button>
             </MenuLink>
           </div>
         </ContainerStyled>
@@ -177,7 +175,7 @@ export default function Menu() {
               <SwiperSlide key={item.id}>
                 <div className="itens">
                   <img src={item.image} alt="slide" className="slide-item" />
-                  <text>{item.id}</text>
+                  <text className="textoSlide">{item.id}</text>
                 </div>
               </SwiperSlide>
             ))}
@@ -188,32 +186,35 @@ export default function Menu() {
           <div className="esquerda">
             <img src={img} alt="fotoMinhaCriança" />
           </div>
+          <h1>Mateus Pierre</h1>
           <div className="direita">
-            <p>
-              Olá me chamo Mateus, tenho 22 anos e estou cursando Engenharia de
-              Computação. Amo esportes e jogos eletronicos, minha paixão pela
-              tecnologia começou por causa de jogos como Pokemon Fire Red,
-              Bomberman, Sudden Attack e mais alguns outros.
-              <br />
-              Minha primeira linguagem de programação foi Python, e meu primeiro
-              projeto foi um campo minado ( usando diversas matrizes, condições
-              e laços de repetição kkkkkkkkkkkk).
-              <br />
-              Recentemente tive um artigo publicado e fui bolsista num projeto
-              de pesquisa da minha faculdade. E atualmente participo de um
-              projeto em parceria com outra faculdade onde estamos desenvolvendo
-              um aplicativo móvel sobre uma Reserva Ambiental(você pode acessar
-              o beta na pagina de projetos)
-              <br />
-              Atualmente as tecnologias que mais uso são React(.js e Native),
-              Node, Python e por fim MySql e Firebase como banco de dados nos
-              meus projetos atuais. Mas tambem tenho experiencia em Java, C++ e
-              faço alguns projetinho simples de hardware utilizando Arduino
-              <br />
-              Estou estudando atualmente TypeScript e Django e me aprofundando
-              nas bibliotecas de machine learning do python como a scikit-learn
-              e SyBorn.
-            </p>
+            <div>
+              <p>
+                Olá me chamo Mateus, tenho 22 anos e estou cursando Engenharia
+                de Computação. Amo esportes e jogos eletronicos, minha paixão
+                pela tecnologia começou por causa de jogos como Pokemon Fire
+                Red, Bomberman, Sudden Attack e mais alguns outros.
+                <br />
+                Minha primeira linguagem de programação foi Python, e meu
+                primeiro projeto foi um campo minado ( usando diversas matrizes,
+                condições e laços de repetição kkkkkkkkkkkk).
+                <br />
+                Recentemente tive um artigo publicado e fui bolsista num projeto
+                de pesquisa da minha faculdade. E atualmente participo de um
+                projeto em parceria com outra faculdade onde estamos
+                desenvolvendo um aplicativo móvel sobre uma Reserva
+                Ambiental(você pode acessar o beta na pagina de projetos)
+                <br />
+                Atualmente as tecnologias que mais uso são React(.js e Native),
+                Node, Python e por fim MySql e Firebase como banco de dados nos
+                meus projetos atuais. Mas tambem tenho experiencia em Java, C++
+                e faço alguns projetinho simples de hardware utilizando Arduino
+                <br />
+                Estou estudando atualmente TypeScript e Django e me aprofundando
+                nas bibliotecas de machine learning do python como a
+                scikit-learn e SyBorn.
+              </p>
+            </div>
           </div>
         </div>
       </ContainerInfo>

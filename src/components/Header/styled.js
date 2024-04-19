@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Nav = styled.div`
-  background-color: ${(props) => (props.hovered ? 'white' : 'transparent')};
+  background-color: ${(props) =>
+    props.hovered === 'true' ? 'white' : 'transparent'};
   padding: 2.3rem;
   display: flex;
   align-items: center;
@@ -16,19 +17,26 @@ export const Nav = styled.div`
   border: 1rem;
   z-index: 1000;
   border-bottom: ${(props) =>
-    props.hovered ? '1px solid #b7b8c0' : '1px solid transparent'};
+    props.hovered === 'true' ? '1px solid #b7b8c0' : '1px solid transparent'};
 
   .link {
-    color: ${(props) => (props.hovered ? 'black' : 'black')};
+    color: ${(props) => (props.hovered === 'true' ? 'black' : 'black')};
   }
   .contato {
-    color: ${(props) => (props.hovered ? 'black' : 'white')};
+    color: ${(props) => (props.hovered === 'true' ? 'black' : 'white')};
+  }
+
+  .nome {
+    filter: ${(props) =>
+      props.hovered === 'true' ? 'invert(1)' : 'invert(0)'};
+    filter: ${(props) =>
+      props.path === '/' ? 'invert(0)' : console.log(props.path)};
   }
 
   .sobrenome {
-    filter: ${(props) => (props.hovered ? 'invert(1)' : 'invert(0)')};
+    filter: ${(props) =>
+      props.hovered === 'true' ? 'invert(1)' : 'invert(0)'};
   }
-
   @media (max-width: 768px) {
     align-items: center;
     justify-content: center;

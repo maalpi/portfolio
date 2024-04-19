@@ -36,7 +36,7 @@ export default function Header() {
 
   return (
     <Nav
-      hovered={isHovered || isScrolled} // Aqui, estamos adicionando isScrolled para manter a cor do nav quando a página é rolada para baixo
+      hovered={isHovered || isScrolled ? 'true' : 'false'} // Aqui, estamos adicionando isScrolled para manter a cor do nav quando a página é rolada para baixo
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -51,15 +51,20 @@ export default function Header() {
       </Menu>
 
       <ContainerDiv>
-        <StyledSVG src={svg} hovered={isHovered || isScrolled} />
+        <StyledSVG
+          src={svg}
+          path={location.pathname}
+          className="nome"
+          hovered={isHovered || isScrolled ? 'true' : 'false'}
+        />
         <StyledSVG
           src={svg1}
           className="sobrenome"
-          hovered={isHovered || isScrolled}
+          hovered={isHovered || isScrolled ? 'true' : 'false'}
         />
       </ContainerDiv>
       <Menu isOpen={isOpen}>
-        <MenuLink className="contato" to="/contato">
+        <MenuLink className="contato" color="#123543" to="/contato">
           Fale comigo
         </MenuLink>
       </Menu>
