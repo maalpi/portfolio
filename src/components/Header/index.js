@@ -12,15 +12,23 @@ import {
 
 import svg from '../../images/MATEUS.svg';
 import svg1 from '../../images/PIERRE.svg';
+import svg3 from '../../images/nomeBlack.svg';
 
 export default function Header() {
   const location = useLocation();
-  console.log(location.pathname);
+
   const [isHovered, setIsHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isPageOne, setPageOne] = useState(true);
 
   useEffect(() => {
+    if (location.pathname === '/') {
+      setPageOne(true);
+    } else {
+      setPageOne(false);
+    }
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       if (scrollPosition > 0) {
@@ -34,7 +42,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  return (
+  return window.innerWidth > 918 ? (
     <Nav
       hovered={isHovered || isScrolled ? 'true' : 'false'} // Aqui, estamos adicionando isScrolled para manter a cor do nav quando a página é rolada para baixo
       onMouseEnter={() => setIsHovered(true)}
@@ -52,8 +60,8 @@ export default function Header() {
 
       <ContainerDiv>
         <StyledSVG
-          src={svg}
-          path={location.pathname}
+          src={svg3}
+          pathTest={isPageOne ? 'true' : 'false'}
           className="nome"
           hovered={isHovered || isScrolled ? 'true' : 'false'}
         />
@@ -73,6 +81,47 @@ export default function Header() {
         <span />
         <span />
       </Hamburger>
+    </Nav>
+  ) : (
+    <Nav
+      hovered={isHovered || isScrolled ? 'true' : 'false'} // Aqui, estamos adicionando isScrolled para manter a cor do nav quando a página é rolada para baixo
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="logo">
+        <StyledSVG
+          src={svg}
+          pathTest={isPageOne ? 'true' : 'false'}
+          className="nome"
+          hovered={isHovered || isScrolled ? 'true' : 'false'}
+        />
+        <StyledSVG
+          src={svg1}
+          className="sobrenome"
+          hovered={isHovered || isScrolled ? 'true' : 'false'}
+        />
+      </div>
+
+      <Hamburger
+        hovered={isHovered || isScrolled ? 'true' : 'false'}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span />
+        <span />
+        <span />
+      </Hamburger>
+      <Menu isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
+        <MenuLink className="link" to="/">
+          Sobre Mim
+        </MenuLink>
+        <MenuLink className="link" to="/projetos">
+          {' '}
+          Projetos
+        </MenuLink>
+        <MenuLink className="contato" to="/contato">
+          Fale comigo
+        </MenuLink>
+      </Menu>
     </Nav>
   );
 }

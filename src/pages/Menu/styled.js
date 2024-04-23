@@ -69,6 +69,7 @@ export const ContainerStyled = styled.div`
     flex-direction: column;
     align-items: center;
     padding-top: 10%;
+    height: 100%;
 
     img {
       max-width: 300px;
@@ -111,6 +112,10 @@ export const ContainerStyled = styled.div`
       float: right;
       margin-right: 10%;
     }
+  }
+
+  @media (max-height: 739px) {
+    height: 110%;
   }
 
   @media (max-width: 378px) {
@@ -179,7 +184,7 @@ export const MenuLink = styled(Link)`
 export const ContainerInfo = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
   width: 100%;
-  height: 100%;
+  height: 105%;
   background: #121212;
   display: flex;
   justify-content: center;
@@ -268,18 +273,110 @@ export const ContainerInfo = styled.div`
     h1 {
       position: absolute;
       margin-left: 50%;
-      margin-bottom: 68vh;
+      margin-bottom: 58vh;
       font-family: 'Times New Roman', Times, serif;
       font-size: 50px;
     }
+
+    button {
+      position: absolute;
+      max-width: 6%;
+      appearance: none;
+      background-color: #fff;
+      border: 2px solid #1a1a1a;
+      border-radius: 15px;
+      box-sizing: border-box;
+      color: #121212;
+      cursor: pointer;
+      display: inline-block;
+      font-family:
+        Roobert,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Helvetica,
+        Arial,
+        sans-serif,
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol';
+      font-size: 16px;
+      font-weight: 600;
+      line-height: normal;
+      margin: 0;
+      min-height: 30px;
+      min-width: 0;
+      outline: none;
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: 45%;
+      will-change: transform;
+      margin-right: 1%;
+      margin-left: 50%;
+      margin-top: 29vw;
+    }
+
+    button:disabled {
+      pointer-events: none;
+    }
+
+    button:hover {
+      box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+      transform: translateY(-2px);
+    }
+
+    button:active {
+      box-shadow: none;
+      transform: translateY(0);
+    }
+
+    .curriculo {
+      position: absolute;
+      margin-top: 10%;
+      margin-left: 50%;
+      margin-top: 55vh;
+    }
+
+    @media (max-width: 1600px) {
+      h1 {
+        margin-bottom: 36%;
+      }
+      button {
+        margin-top: 39%;
+        margin-bottom: 5%;
+      }
+    }
+    @media (max-width: 1450px) {
+      h1 {
+        margin-bottom: 42%;
+      }
+      button {
+        margin-top: 45%;
+        margin-bottom: 5%;
+        max-width: 10%;
+      }
+    }
+
     @media (max-width: 1025px) {
       h1 {
         margin-bottom: 52%;
       }
+      button {
+        margin-top: 58%;
+        margin-bottom: 5%;
+        max-width: 10%;
+      }
     }
+
     @media (max-width: 1000px) {
       flex-direction: column;
       margin-top: 30%;
+
       .texto {
         padding-top: 10px;
         width: 400px;
@@ -311,11 +408,25 @@ export const ContainerInfo = styled.div`
         margin-left: 0%;
         margin-bottom: 0%;
       }
+
+      button {
+        max-width: 100%;
+        position: relative;
+        margin: 0% 0% 4% 0%;
+        vertical-align: middle;
+      }
+
       .direita {
         position: relative;
         margin-left: 0%;
         padding-top: 10px;
         width: 300px;
+      }
+    }
+    @media (max-height: 601px) {
+      button {
+        margin-top: 49%;
+        margin-left: 38%;
       }
     }
   }

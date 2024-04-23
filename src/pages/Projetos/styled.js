@@ -8,6 +8,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap; /* Permite que os itens ocupem o espaço verticalmente */
+
   p {
     margin-top: 3%;
     margin-bottom: 3%;

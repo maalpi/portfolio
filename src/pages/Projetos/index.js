@@ -146,7 +146,7 @@ export default function Projetos() {
         setSpacePerView(50);
       } else if (window.innerWidth < 1645) {
         setSlidesPerView(2);
-        setSpacePerView(0);
+        setSpacePerView(4);
       } else {
         setSlidesPerView(3);
         setSpacePerView(-200);
@@ -281,7 +281,7 @@ export default function Projetos() {
       </div>
 
       <div className="carrossel">
-        <h1>Projetinhos variados (Python, C++ e JS) </h1>
+        <h1>Projetos variados (Python, C++ e JS) </h1>
         <Swiper
           modules={[Autoplay]}
           className="mySwiper"

@@ -60,10 +60,24 @@ export default function Contato() {
               <strong>Email: pierremateus81@gmail.com</strong>
               <br />
               <br />
-              <strong>Linkedin e Github:</strong>
+              <strong>Git e Linkedin:</strong>
             </address>
-            <FaSquareGithub size={72} />
-            <CiLinkedin size={72} />
+            <a
+              href="https://github.com/maalpi"
+              alt="link do Github"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaSquareGithub size={72} color="#fff" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mateus-pierre-96799218a/"
+              alt="link do Linkedin"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <CiLinkedin size={72} color="#fff" />
+            </a>
           </Col>
           <Col lg="7" className="d-flex align-items-center mb-5">
             <form className="contact__form w-100" onSubmit={sendEmail}>
